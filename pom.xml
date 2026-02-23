@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -23,7 +25,7 @@
   <scm>
     <url>https://github.com/SquareSquash/java</url>
     <connection>scm:git:git://github.com/SquareSquash/java.git</connection>
-    <developerConnection>scg:git:git@github.com/SquareSquash/java.git</developerConnection>
+    <developerConnection>scm:git:git@github.com:SquareSquash/java.git</developerConnection>
   </scm>
 
   <organization>
@@ -47,7 +49,9 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <java.version>1.5</java.version>
+    <!-- Java version updated -->
+    <java.version>8</java.version>
+
     <junit.version>4.10</junit.version>
     <fest.version>1.4</fest.version>
     <mockito.version>1.8.5</mockito.version>
@@ -61,18 +65,21 @@
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>org.easytesting</groupId>
       <artifactId>fest-assert</artifactId>
       <version>${fest.version}</version>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
       <version>${mockito.version}</version>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
@@ -83,16 +90,18 @@
 
   <build>
     <plugins>
+
+      <!-- Compiler plugin updated -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.5</version>
+        <version>3.11.0</version>
         <configuration>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
+          <release>8</release>
         </configuration>
       </plugin>
 
+      <!-- Checkstyle plugin (unchanged) -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
@@ -111,6 +120,8 @@
           </execution>
         </executions>
       </plugin>
+
     </plugins>
   </build>
+
 </project>
